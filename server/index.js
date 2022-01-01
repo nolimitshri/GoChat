@@ -1,8 +1,20 @@
-const io = require('socket.io')(3000 || process.env.PORT, {
+// const io = require('socket.io')(3000 || process.env.PORT, {
+//     cors: {
+//         origin: "*"
+//     }
+// });
+
+const express = require("express")
+var app = express();
+const cors = require('cors');
+app.use(cors());
+var server = app.listen(4000 || process.env.PORT);
+var io = require('socket.io')(server, {
     cors: {
-        origin: "*"
+      origin: '*',
     }
 });
+
 const users = {};
 
 io.on('connection', socket => {
