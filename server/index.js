@@ -6,7 +6,7 @@
 
 const io = require("socket.io")(httpServer, {
     cors: {
-      origin: "*",
+      origin: "https://reverent-hoover-b95640.netlify.app/",
       methods: ["GET", "POST"],
       allowedHeaders: ["my-custom-header"],
       credentials: true
