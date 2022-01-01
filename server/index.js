@@ -1,4 +1,4 @@
-const io = require('socket.io')(http, {
+const io = require('socket.io')(3000 || process.env.PORT, {
     cors: {
         origin: "*"
     }
@@ -27,5 +27,3 @@ io.on('connection', socket => {
         delete users[socket.id];
     });
 });
-
-http.listen(3000 || process.env.PORT);
