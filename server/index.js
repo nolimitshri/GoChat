@@ -1,17 +1,8 @@
-// const io = require('socket.io')(http, {
-//     cors: {
-//         origin: "*"
-//     }
-// });
-
-const io = require("socket.io")(httpServer, {
+const io = require('socket.io')(http, {
     cors: {
-      origin: "https://reverent-hoover-b95640.netlify.app/",
-      methods: ["GET", "POST"],
-      allowedHeaders: ["my-custom-header"],
-      credentials: true
+        origin: "*"
     }
-  });
+});
 
 const users = {};
 
@@ -37,4 +28,4 @@ io.on('connection', socket => {
     });
 });
 
-httpServer.listen(3000 || process.env.PORT);
+http.listen(3000 || process.env.PORT);
