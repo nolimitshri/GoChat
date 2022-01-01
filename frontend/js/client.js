@@ -10,7 +10,7 @@ const messageInput = document.getElementById("messageInput");
 const messageContainer = document.querySelector(".container");
 
 // insert any Audio on receiving messages
-var audio = new Audio("../frontend/audio/tone.mp3");
+var audio = new Audio("../audio/tone.mp3");
 // console.log(__dirname);
 // when a new user joins the chat we want to give message all the existing users before.
 const append = (message, position)=>{
