@@ -1,4 +1,5 @@
-const socket = io('http://localhost:8000');
+// const socket = io('http://localhost:8000');
+const socket = io("https://thawing-lowlands-90887.herokuapp.com/");
 
 // get DOM elements in respective JS variables
 const form = document.getElementById("send-container");
