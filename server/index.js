@@ -1,51 +1,8 @@
-// const io = require('socket.io')(3000 || process.env.PORT, {
-//     cors: {
-//         origin: "*"
-//     }
-// });
-
-// const express = require("express")
-// const http = require("http");
-// var app = express();
-// const cors = require('cors');
-// app.use(cors());
-// var server = app.listen(4000 || process.env.PORT);
-// var io = require('socket.io')(server, {
-//     cors: {
-//       origin: '*',
-//     }
-// });
-
-// var express = require('express'),
-//     app = express(), 
-//     server = require('http').createServer(app),
-//     io = require('socket.io').listen(server),
-//     path = require('path');
-// server.listen(3000 || process.env.PORT);
-
-import express from "express";
-import http from "http";
-
-const app = express();
-const server = http.createServer(app);
-
-const io = require("socket.io")(server, {
-    handlePreflightRequest: (req, res) => {
-        const headers = {
-            "Access-Control-Allow-Headers": "Content-Type, Authorization",
-            "Access-Control-Allow-Origin": req.headers.origin, //or the specific origin you want to give access to,
-            "Access-Control-Allow-Credentials": true
-        };
-        res.writeHead(200, headers);
-        res.end();
+const io = require('socket.io')(3000 || process.env.PORT, {
+    cors: {
+        origin: "*"
     }
 });
-
-io.on("connection", () => {
-    console.log("Connected!");
-});
-
-server.listen(3000 || process.env.PORT);
 
 const users = {};
 
