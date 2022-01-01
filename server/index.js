@@ -1,4 +1,9 @@
-const io = require('socket.io')();
+const io = require('socket.io')(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
 
 const users = {};
 
@@ -24,4 +29,4 @@ io.on('connection', socket => {
     });
 });
 
-io.listen(3000 || process.env.PORT);
+server.listen(3000 || process.env.PORT);
