@@ -4,16 +4,24 @@
 //     }
 // });
 
-const express = require("express")
-var app = express();
-const cors = require('cors');
-app.use(cors());
-var server = app.listen(4000 || process.env.PORT);
-var io = require('socket.io')(server, {
-    cors: {
-      origin: '*',
-    }
-});
+// const express = require("express")
+// const http = require("http");
+// var app = express();
+// const cors = require('cors');
+// app.use(cors());
+// var server = app.listen(4000 || process.env.PORT);
+// var io = require('socket.io')(server, {
+//     cors: {
+//       origin: '*',
+//     }
+// });
+
+var express = require('express'),
+    app = express(), 
+    server = require('http').createServer(app),
+    io = require('socket.io').listen(server),
+    path = require('path');
+server.listen(3000 || process.env.PORT);
 
 const users = {};
 
