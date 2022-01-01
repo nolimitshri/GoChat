@@ -9,8 +9,14 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const app = express();
+const cors = require("cors");
+app.use(cors());
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server, {
+    cors: {
+        origin: ["https://reverent-hoover-b95640.netlify.app/"]
+    }
+});
 
 
 const users = {};
