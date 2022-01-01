@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoChat - Realtime Node Socket.io chat app</title>
+    <!-- <script defer src="http://localhost:8000/socket.io/socket.io.js"></script> -->
+    <!-- <script defer src="../server/node_modules/socket.io/client-dist/socket.io.js"></script> -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav>
+        <!-- <img class="logo" src="img/chat.png" alt=""> -->
+        <h2>Welcome to the <span>GoChat</span><small>( Multiclient Chatting Application Initiative (Beta) )</small></h2>
+        
+    </nav>
+    <div class="container">
+        <!-- <div class="message right">Shri: Hey how are you?</div>  -->
+        <!-- <div class="message left">Harry: I am fine, what about you??</div>  -->
+    </div>
+    <div class="send">
+        <form id="send-container" action="#" method="post">
+            <!-- <input autocomplete="off" type="text" name="messageInput" id="messageInput"> -->
+            <textarea placeholder="Start Typing here..." name="messageInput" id="messageInput" cols="100" rows="5"></textarea>
+            <!-- <button class="btn" type="submit" name="btn">SEND</button> -->
+            <input type="image" class="sendImage" src="./img/send.png" alt="" onclick="document.form[0].submit();">
+        </form>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2022 Shri, All Rights Reserved</p>
+    </footer>
+</body>
+</html>

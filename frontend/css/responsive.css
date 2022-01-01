@@ -1,0 +1,16 @@
+@media screen and (max-width: 800px){
+    body{
+        height: 120vh;
+    }
+    .sendImage{
+        left: 81%;
+    }
+    .message{
+        padding: 9px;
+        margin: 13px 3px;
+    }
+    .container{
+        width: 84%;
+        padding: 2%;
+    }
+}
