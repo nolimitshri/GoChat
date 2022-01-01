@@ -1,15 +1,17 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
-app.use(cors);
-const http = require("http").createServer(app);
+// const io = require('socket.io')(http, {
+//     cors: {
+//         origin: "*"
+//     }
+// });
 
-
-const io = require('socket.io')(http, {
+const io = require("socket.io")(httpServer, {
     cors: {
-        origin: "*"
+      origin: "*",
+      methods: ["GET", "POST"],
+      allowedHeaders: ["my-custom-header"],
+      credentials: true
     }
-});
+  });
 
 const users = {};
 
@@ -35,4 +37,4 @@ io.on('connection', socket => {
     });
 });
 
-http.listen(3000 || process.env.PORT);
+httpServer.listen(3000 || process.env.PORT);
